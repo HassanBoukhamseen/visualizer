@@ -1,0 +1,15 @@
+{
+    "name": "Visualizer",
+    "version": "1.0.0",
+    "main": "main.js",
+    "devDependencies": {},
+    "scripts": {
+        "start": "electron ."
+    },
+    "dependencies": {
+        "c3": "^0.7.20",
+        "chartist": "^0.11.4",
+        "electron": "^11.0.2",
+        "python-shell": "^2.0.3"
+    }
+}

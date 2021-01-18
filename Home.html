@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Visualizer Tool</title>
+        <link href="./style/index.css" rel="stylesheet" type="text/css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@500&family=Montserrat:wght@300&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/a6c4a8c772.js" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.7.20/c3.min.js" integrity="sha512-+IpCthlNahOuERYUSnKFjzjdKXIbJ/7Dd6xvUp+7bEw0Jp2dg6tluyxLs+zq9BMzZgrLv8886T4cBSqnKiVgUw==" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.7.20/c3.css" integrity="sha512-GQSxWe9Cj4o4EduO7zO9HjULmD4olIjiQqZ7VJuwBxZlkWaUFGCxRkn39jYnD2xZBtEilm0m4WBG7YEmQuMs5Q==" crossorigin="anonymous" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.7.20/c3.js" integrity="sha512-11Z4MD9csmC3vH8Vd0eIPJBQu3uEHEqeznWEt3sLBCdQx3zm9mJbBcJH8WTcyGY9EXDE81BNpjE2vLosPK8cFQ==" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.7.20/c3.min.css" integrity="sha512-cznfNokevSG7QPA5dZepud8taylLdvgr0lDqw/FEZIhluFsSwyvS81CMnRdrNSKwbsmc43LtRd2/WMQV+Z85AQ==" crossorigin="anonymous" />
+        <script src="https://d3js.org/d3.v3.min.js"></script>
+    </head>
+    <body id="body">
+        <header>
+            <div id='header_container'>
+                <div id="main_container">
+                    <ul id='main_list'>
+                        <li class='main_list_items' id='Home'>Home</li>
+                        <li class='main_list_items' id='Visualize'>Visualize</li>
+                        <li class='main_list_items' id='Analyze'>Analyze</li>
+                        <li class='main_list_items' id='SC'>Edit Source Code</li>
+                    </ul>
+                </div>
+                <div id="Home_container">
+                    <ul id='Home_list'>
+                        <li class='Home_list_items'>Option 1</li>
+                        <li class='Home_list_items'>Option 2</li>
+                        <li class='Home_list_items'>Option 3</li>
+                        <li class='Home_list_items'>Option 4</li>
+                        <li class='Home_list_items'>Option 5</li>
+                    </ul>
+                </div>
+                <div id="Visualize_container">
+                    <ul id='Visualize_list'>
+                        <li class='Visualize_list_items' id='Table'>Table</li>
+                        <li class='Visualize_list_items' id='Line'>Line Chart</li>
+                        <li class='Visualize_list_items' id='Pie'>Pie Chart</li>
+                        <li class='Visualize_list_items' id='Scatter'>Scatter Plot</li>
+                        <li class='Visualize_list_items' id='Bar'>Bar Graph</li>
+                    </ul>
+                </div>
+                <div id="Analyze_container">
+                    <ul id='Analyze_list'>
+                        <li class='Analyze_list_items' id='regression'>Regression</li>
+                        <li class='Analyze_list_items' id='classification'>Classification</li>
+                        <li class='Analyze_list_items' id='clustering'>Clustering</li>
+                    </ul>
+                </div>
+                <div id="SC_container">
+                    <ul id='SC_list'>
+                        <li class='SC_list_items'>Option 1</li>
+                        <li class='SC_list_items'>Option 2</li>
+                        <li class='SC_list_items'>Option 33</li>
+                        <li class='SC_list_items'>Option 4</li>
+                        <li class='SC_list_items'>Option 5</li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+        <main>
+            <div id="main_div">
+                <div id="side_bar">
+                    <div id="TableTools">
+                        <p class="form_items">Choose a file to insert as a table</p>
+                        <input class="UploadButton" type="file" onchange="loadFile(this)">
+                    </div>
+                    <div id="LineTools">
+                        <form>
+                            <p class="form_items">Choose a file to create the line chart</p>
+                            <p class="form_items">Choose Column (Count starts from 0) </p><input type="number" class="form_items inputs" id="line_plot_column">
+                            <input class="UploadButton" id="line_plot_uploader" type="file" onchange="loadFileForLinePlot(this)">
+                        </form>
+                    </div>
+                    <div id="PieTools">
+                        <form id="pie_form">
+                            <p class="form_items">Choose a file to create the pie chart</p>
+                            <p class="form_items subscript">Enter Category </p><input type="text" class="form_items inputs pie_items"> <br class="br">
+                            <p class="form_items subscript">Enter its quantity </p><input type="number" class="form_items inputs pie_items"> <br class="br">
+                            <button type="button" id="add_category" onclick="return addCategory()">Add Category</button>
+                            <button type="button" id="remove_category" onclick="return removeCategory()">Remove Category</button>
+                            <button type="button" id="create_pie" onclick="return createPie()">Create Pie Chart</button>
+                        </form>
+                    </div>
+                    <div id="ScatterTools">
+                        <form>
+                            <p class="form_items">Choose a file to create the scatter plot</p>
+                            <p class="form_items">X Axis Column Number (Count starts from 0)</p><input type="number" class="form_items inputs" id="scatter_xaxis"> <br>
+                            <p class="form_items">Y Axis Column Number (Count starts from 0)</p><input type="number" class="form_items inputs" id="scatter_yaxis">
+                            <input class="UploadButton" id="scatter_plot_uploader" type="file" onchange="loadFileForScatterPlot(this)">
+                        </form>
+                    </div>
+                    <div id="BarTools">
+                        <form id="bar_form">
+                            <p class="form_items">Choose a file to create the bar plot</p>
+                            <p class="form_items bar_subscript">Choose Column Number (Count starts from 0)</p><input type="number" class="form_items inputs bar_items" id="scatter_xaxis"> <br class="bar_br">
+                            <button type="button" id="add_column" onclick="return addColumn()">Add Column</button>
+                            <button type="button" id="remove_column" onclick="return removeColumn()">Remove Column</button>
+                        </form>
+                        <input class="UploadButton" id="bar_plot_uploader" type="file" onchange="loadFileForBarPlot(this)" style="margin-bottom: 2vh;">
+                    </div>
+                    <div id="regressionTools">
+                        <input class="UploadButton" id="regression_uploader" type="file" onchange="python_regression(this)" style="margin-bottom: 2vh;">
+                    </div>
+                </div>
+                <iframe id="documentation" src="https://docs.google.com/document/d/e/2PACX-1vReRrLcVTOfPgItrelpCb1DrvEs40WaTUBcdFZhwcRj8obZLkkz6kqs72zzpqJlKlCDkP3UdytMp-Gy/pub?embedded=true"></iframe>
+                <div id="workArea">
+                    <div id="card">
+                        <i class="fas fa-plus"></i>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </body>
+    <script src="./JavaScript/index.js"></script>
+    <script src="./JavaScript/linePlot.js"></script>
+    <script src="./JavaScript/scatterPlot.js"></script>
+    <script src="./JavaScript/barPlot.js"></script>
+    <script src="./JavaScript/PieChart.js"></script>
+    <script src="./JavaScript/regression.js"></script>
+</html>

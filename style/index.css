@@ -1,0 +1,304 @@
+body {
+    background-color: rgb(31, 30, 30);
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+}
+#header_container {
+    display: flex;
+    flex-wrap: nowrap;
+    width: all;
+    height: 150px;
+    border: 1px solid rgba(151, 86, 56, 0.883);
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 15px;
+    overflow-x: auto; 
+}
+#main_container {
+    display: flex;
+	justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 4.5vh;
+    background-color:rgba(151, 86, 56, 0.883);
+    margin-bottom: 15px;
+}
+#main_list {
+    list-style: none;
+}
+.main_list_items {
+    display: inline-block;
+    font-size: 15px;
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 20px;
+    border-radius: 10px;
+    border-radius: 20px;
+    padding: 5px;
+}
+.main_list_items:hover {
+    background:rgba(47, 47, 46, 0.657);
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+#Home_container {
+    display: flex;
+    flex-direction: row;
+    align-content: stretch;
+    width: 80%;
+    position: absolute;
+    margin-top: 4%;
+    margin-left: 18%;
+    text-align: center;
+}
+#Visualize_container {
+    display: none;
+    flex-direction: row;
+    align-content: stretch;
+    width: 80%;
+    position: absolute;
+    margin-top: 4%;
+    margin-left: 18%;
+    text-align: center;
+}
+.Visualize_list_items, .Analyze_list_items {
+    border-radius: 1px;
+    padding: 15px;
+    display: inline-block;
+    font-size: 20px;
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 80px;
+    border-radius: 10px;
+    margin-bottom: 7px;
+}
+.Visualize_list_items:hover, .Analyze_list_items:hover {
+    background-color: rgba(151, 86, 56, 0.438);
+    border: 1px solid orange;
+    cursor: pointer;
+}
+#Analyze_container {
+    display: none;
+    flex-direction: row;
+    align-content: stretch;
+    width: 80%;
+    position: absolute;
+    margin-top: 4%;
+    margin-left: 18%;
+    text-align: center;
+}
+#SC_container {
+    display: none;
+    flex-direction: row;
+    align-content: stretch;
+    width: 80%;
+    position: absolute;
+    margin-top: 4%;
+    margin-left: 18%;
+    text-align: center;
+}
+#Home_list, #Visualize_list, #Analyze_list, #SC_list{
+    list-style: none;
+}
+.Home_list_items, .SC_list_items {
+    display: inline-block;
+    font-size: 20px;
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 80px;
+    border-radius: 10px;
+    margin-bottom: 7px;
+    border-radius: 20px;
+    padding: 5px;
+}
+#main_div {
+    display: flex;
+    width: all;
+    height: all;
+    margin-left: auto;
+    margin-right: auto;
+}
+#side_bar {
+    display: inline-block;
+    width: 25%;
+    height: 100vh;
+    border: 1px solid rgba(151, 86, 56, 0.883);
+    overflow-x: auto; 
+    overflow-y: auto; 
+}
+#workArea, #documentation {
+    display: none;
+    width: 74%;
+    height: 100vh;
+    border: 1px solid rgba(151, 86, 56, 0.883);
+    margin-left: 10px;
+    overflow-x: auto; 
+    overflow-y: auto; 
+}
+#card {
+    display: block;
+    background-color: rgba(151, 86, 56, 0.583);
+    border-radius: 10px;
+    width: 90%;
+    height: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3.5vh;
+    margin-bottom: 3.5vh;
+}
+
+#card:hover {
+    background-color: rgba(151, 86, 56, 0.383);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.fa-plus {
+    font-size: 180px;
+    margin-left: 42%;
+    margin-top: 15%;
+    color:rgba(151, 86, 56, 0.883);
+}
+.table_data {
+    border-collapse: collapse;
+    border: 1px solid black;
+    border-radius: 10px;
+    background: white;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    pointer-events: none;
+    color: black;
+    width: 700px;
+
+}
+th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 15px;
+}
+#TableTools, #LineTools, #BarTools, #PieTools, #ScatterTools {
+    display: none;
+}
+.ct-chart {
+    width: 85%;
+    height: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    margin-top: 20px;
+    font-size: 17px;
+    color: white;
+}
+.ct-chart .ct-line {
+    stroke: blue;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2vh;
+    align-content: center;
+    justify-content: space-between;
+}
+.form_items {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+}
+.inputs {
+    border: 1px solid orange;
+    height: 3vh;
+    border-radius: 10px;
+}
+input[type="file"] {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3.5vh;
+}
+#add_column, #remove_column, #add_category, #create_pie, #remove_category {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgba(151, 86, 56, 0.883);
+    border: none;
+    border-radius: 5px;
+    font-family: 'Montserrat';
+    height: 4vh;
+    margin-bottom: 2vh;
+}
+#add_column:hover, #remove_column:hover, #add_category:hover,  #create_pie:hover, #remove_category:hover {
+    background-color: orange;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.chart-container {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 80%;
+    height: 40%;
+    background-color: white;
+    margin-top: 20px;
+}
+.charts {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    border-radius: 15px;
+}
+.model_values {
+    border-collapse: collapse;
+    border: 1px solid black;
+    border-radius: 10px;
+    background: white;
+    color: black;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    width: 700px;
+    text-align: center;
+}
+#features_container {
+    color: white;
+    list-style: none;
+    display: inline-block;
+}
+.features {
+    padding: 10px;
+    background: rgba(138, 135, 135, 0.9);
+    border-radius: 10px;
+    width: 350px;
+    margin-left: 20px;
+}
+.list_items {
+    margin: 7px;
+    font-family: 'Montserrat';
+    text-align: center;
+}
+.model {
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background: rgba(73, 72, 72, 0.9);
+    display: none;
+    align-items: center;
+    justify-content: flex-start;
+    align-content: center;
+    width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 25px;
+}
+#regressionTools {
+    display: none;
+}
+
+
+
