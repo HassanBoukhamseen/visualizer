@@ -1,4 +1,5 @@
 <h4> {Note: This application is not complete yet, but it does offer most of the functionality mentioned below} </h4> 
+<img src="interface.png"/>
 <p>
 This application is meant to provide a simple user interface for beginners in the machine learning field.
 Instead of programming the model and training it, the application abstracts away from the technicalities, allowing the user to
@@ -32,7 +33,7 @@ following documentation.
 </ul>
 <p>For that to be possible, the application accepts a standard format where features come first, and the
 independent comes last in a csv format. Please refer to the following image for an example.</p>
-<img src="kdfns"/>
+
 <p>Observe that both Age and the Estimated Salary are independent variables, and the variable the user wishes to predict comes last in the table.</p>
 <p>As for the graphical user interface, the interface is meant to be simple
 (Honestly, I am more interested in getting this thing to work than making it good looking). The format that I have chosen to
