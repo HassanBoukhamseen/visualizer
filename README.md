@@ -32,7 +32,7 @@ following documentation.
 </ul>
 <p>For that to be possible, the application accepts a standard format where features come first, and the
 independent comes last in a csv format. Please refer to the following image for an example.</p>
-<img src=""/>
+<img src="kdfns"/>
 <p>Observe that both Age and the Estimated Salary are independent variables, and the variable the user wishes to predict comes last in the table.</p>
 <p>As for the graphical user interface, the interface is meant to be simple
 (Honestly, I am more interested in getting this thing to work than making it good looking). The format that I have chosen to
