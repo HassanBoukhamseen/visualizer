@@ -1,3 +1,4 @@
+<h4> {Note: This application is not complete yet, but it does offer most of the functionality mentioned below} </h4> 
 <p>
 This application is meant to provide a simple user interface for beginners in the machine learning field.
 Instead of programming the model and training it, the application abstracts away from the technicalities, allowing the user to
