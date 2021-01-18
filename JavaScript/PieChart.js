@@ -24,8 +24,6 @@ function createPie() {
         index1++;
 
     })
-    console.log(elements)
-    console.log(piePieces)
     var chartContainer = document.createElement('div');
     chartContainer.className = 'chart-container'
     chartContainer.innerHTML += "<br><br>"
