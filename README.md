@@ -8,7 +8,7 @@ following documentation.
 </p>
 
 <h3> Format </h3>
-<p>So far, the application is able to deploy the following machine learning models:</p>
+<p>The application is able to deploy the following machine learning models:</p>
 <h4> Regression: </h4>
 <ul>
 <li>Simple Regression</li>
@@ -32,7 +32,7 @@ following documentation.
 <li>Hierarchal Clustering</li>
 </ul>
 <p>For that to be possible, the application accepts a standard format where features come first, and the
-independent comes last in a csv format. Please refer to the following image for an example.</p>
+independent variable comes last in a csv format. Please refer to the following image for an example.</p>
 <img src="example.png"/>
 <p>Observe that both Age and the Estimated Salary are independent variables, and the variable the user wishes to predict comes last in the table.</p>
 <p>As for the graphical user interface, the interface is meant to be simple
@@ -55,9 +55,9 @@ chose to deploy. Generally, this information will be in the form of: Accuracy, M
  
 <h4>Edit Source Code</h4>
 <p>While the application is geared mostly towards beginners,
-I thought adding a tab to give the user the capability to edit and tweak the python source would
+I thought adding a tab to give the user the capability to edit and tweak the python source code would
 add more functionality and make the application more customizable to the more experienced programmer.</p>
 
 
 <p>After the user is done with working with the data, they can compile a pdf document out of the blocks
-the user added. Simply press the Print Document bottom, which you can find at the bottom right, and a pdf will pop up in a separate window. </p>
+the user added. Simply press the Print Document button located at the bottom right, and a pdf will pop up in a separate window. </p>
